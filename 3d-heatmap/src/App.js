@@ -1,19 +1,42 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import ReactMapGL from 'react-map-gl';
+
+class DeckGLOverlay {
+  static get defaultViewport() {
+    return {
+      longitude: -104.9903,
+      latitude: 39.792,
+      zoom: 8.6,
+      minZoom: 5,
+      maxZoom: 15,
+      pitch: 40.5,
+      bearing: -127.396674584323023
+    };
+  }
+
+}
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      viewport: {
+        ...DeckGLOverlay.defaultViewport,
+        height: 500,
+        width: 500
+      },
+      data: null
+    };
+  }
+
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+    return (<ReactMapGL
+            {...this.state.viewport}
+            onViewportChange={(viewport) => this.setState(viewport)}
+            mapboxApiAccessToken={this.props.mapboxToken}
+        >
+      </ReactMapGL>
     );
   }
 }
