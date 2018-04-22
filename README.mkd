@@ -1,0 +1,4 @@
+# Deck.gl With Jupyter Notebooks
+
+A Python plugin to embed [deck.gl](https://github.com/uber/deck.gl)
+visualizations in Jupyter Notebooks.
