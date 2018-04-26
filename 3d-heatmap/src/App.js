@@ -1,20 +1,7 @@
 import React, { Component } from 'react';
 import ReactMapGL from 'react-map-gl';
 
-class DeckGLOverlay {
-  static get defaultViewport() {
-    return {
-      longitude: -104.9903,
-      latitude: 39.792,
-      zoom: 8.6,
-      minZoom: 5,
-      maxZoom: 15,
-      pitch: 40.5,
-      bearing: -127.396674584323023
-    };
-  }
-
-}
+import HeatmapOverlay from './heatmap-overlay.js';
 
 class App extends Component {
   constructor(props) {
@@ -22,20 +9,23 @@ class App extends Component {
 
     this.state = {
       viewport: {
-        ...DeckGLOverlay.defaultViewport,
+        ...HeatmapOverlay.defaultViewport,
         height: 500,
         width: 500
       },
-      data: null
+      data: props.data || []
     };
   }
 
   render() {
+    const {viewport, data} = this.state;
+
     return (<ReactMapGL
-            {...this.state.viewport}
+            {...viewport}
             onViewportChange={(viewport) => this.setState(viewport)}
             mapboxApiAccessToken={this.props.mapboxToken}
         >
+            <HeatmapOverlay viewport={viewport} data={data}/>
       </ReactMapGL>
     );
   }
