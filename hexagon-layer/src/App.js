@@ -22,6 +22,7 @@ class App extends Component {
 
     return (<ReactMapGL
             {...viewport}
+            mapStyle="mapbox://styles/mapbox/dark-v9"
             onViewportChange={(viewport) => this.setState(viewport)}
             mapboxApiAccessToken={this.props.mapboxToken}
         >

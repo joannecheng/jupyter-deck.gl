@@ -102,7 +102,7 @@ export default class HeatmapOverlay extends Component{
         lightSettings: LIGHT_SETTINGS,
         opacity: 1,
         pickable: false,
-        radius: 250,
+        radius: 1000,
         upperPercentile: 100
       })
     ]
