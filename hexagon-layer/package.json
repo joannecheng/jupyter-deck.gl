@@ -1,0 +1,22 @@
+{
+  "name": "3d-heatmap",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "deck.gl": ">=5.2.0-alpha.7",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-map-gl": "^3.2.7",
+    "react-scripts": "1.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "build:dist": "react-build-dist",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "react-build-dist": "^0.0.8"
+  }
+}
