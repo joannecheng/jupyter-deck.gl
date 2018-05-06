@@ -2,25 +2,25 @@
 # yarn lockfile v1
 
 
-"@deck.gl/core@^5.2.0":
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/@deck.gl/core/-/core-5.2.0.tgz#ab93187803bf9195e4ea8c50a5a4a81c01ea36c7"
+"@deck.gl/core@^5.2.2":
+  version "5.2.2"
+  resolved "https://registry.yarnpkg.com/@deck.gl/core/-/core-5.2.2.tgz#0ef5791c2bc712668ac7fe7a5d9f2a5a6bb1206c"
   dependencies:
     d3-hexbin "^0.2.1"
     earcut "^2.0.6"
     lodash.flattendeep "^4.4.0"
-    luma.gl ">=5.2.0"
+    luma.gl "^5.2.0"
     math.gl "^1.1.3"
     mjolnir.js "^1.0.0"
     probe.gl "^1.0.0"
     seer "^0.2.4"
     viewport-mercator-project "^5.1.0"
 
-"@deck.gl/react@^5.2.0":
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/@deck.gl/react/-/react-5.2.0.tgz#15af6b68988ab2de43ca019d42f08a124e613fd5"
+"@deck.gl/react@^5.2.3":
+  version "5.2.3"
+  resolved "https://registry.yarnpkg.com/@deck.gl/react/-/react-5.2.3.tgz#f4035d20a7c929ea722d81110a9714b1332806a3"
   dependencies:
-    "@deck.gl/core" "^5.2.0"
+    "@deck.gl/core" "^5.2.2"
     prop-types "^15.6.0"
 
 "@mapbox/geojson-area@0.2.2":
@@ -2226,12 +2226,12 @@ decamelize@^1.0.0, decamelize@^1.1.1, decamelize@^1.1.2:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/decamelize/-/decamelize-1.2.0.tgz#f6534d15148269b20352e7bee26f501f9a191290"
 
-deck.gl@>=5.2.0-alpha.7:
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/deck.gl/-/deck.gl-5.2.0.tgz#1df1bdcbb44e4cf82c0cce694102b2dc2e3a4499"
+deck.gl@>=5.2.1:
+  version "5.2.3"
+  resolved "https://registry.yarnpkg.com/deck.gl/-/deck.gl-5.2.3.tgz#e22dfdddd1eb417ebcad4a4e824226fdb897639b"
   dependencies:
-    "@deck.gl/core" "^5.2.0"
-    "@deck.gl/react" "^5.2.0"
+    "@deck.gl/core" "^5.2.2"
+    "@deck.gl/react" "^5.2.3"
 
 decode-uri-component@^0.2.0:
   version "0.2.0"
@@ -4782,7 +4782,7 @@ lru-cache@^4.0.1:
     pseudomap "^1.0.2"
     yallist "^2.1.2"
 
-luma.gl@>=5.2.0:
+luma.gl@^5.2.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/luma.gl/-/luma.gl-5.2.0.tgz#337e93626423a9e850378a26c9d84de5dcb2513b"
   dependencies:
