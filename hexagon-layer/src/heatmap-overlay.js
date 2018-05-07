@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import DeckGL, {HexagonLayer} from 'deck.gl';
+import DeckGL, { HexagonLayer } from 'deck.gl';
+import PropTypes from 'prop-types';
 
 const colorRange = [
   [1, 152, 189],
@@ -7,7 +8,7 @@ const colorRange = [
   [216, 254, 181],
   [254, 237, 177],
   [254, 173, 84],
-  [209, 55, 78]
+  [209, 55, 78],
 ];
 
 const LIGHT_SETTINGS = {
@@ -19,21 +20,9 @@ const LIGHT_SETTINGS = {
   numberOfLights: 2
 };
 
-export default class HeatmapOverlay extends Component{
+export default class HeatmapOverlay extends Component {
   static get defaultColorRange() {
     return colorRange;
-  }
-
-  static get defaultViewport() {
-    return {
-      longitude: -104.9903,
-      latitude: 39.792,
-      zoom: 8.6,
-      minZoom: 5,
-      maxZoom: 15,
-      pitch: 40.5,
-      bearing: -127.396674584323023
-    };
   }
 
   constructor(props) {
@@ -77,7 +66,7 @@ export default class HeatmapOverlay extends Component{
     if (this.state.elevationScale === 50) {
       this._stopAnimate();
     } else {
-      this.setState({elevationScale: this.state.elevationScale + 1});
+      this.setState({ elevationScale: this.state.elevationScale + 1 });
     }
   }
 
@@ -87,7 +76,7 @@ export default class HeatmapOverlay extends Component{
   }
 
   render() {
-    const {viewport, data} = this.props;
+    const { viewport, data } = this.props;
 
     const layers = [
       new HexagonLayer({
@@ -104,9 +93,24 @@ export default class HeatmapOverlay extends Component{
         pickable: false,
         radius: 1000,
         upperPercentile: 100
-      })
-    ]
+      }),
+    ];
 
     return(<DeckGL {...viewport} layers={layers} />);
   }
 }
+
+HeatmapOverlay.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.array).isRequired,
+  mapboxToken: PropTypes.string.isRequired,
+
+  viewport: PropTypes.shape({
+    longitude: PropTypes.number.isRequired,
+    latitude: PropTypes.number.isRequired,
+    zoom: PropTypes.number.isRequired,
+    minZoom: PropTypes.number.isRequired,
+    maxZoom: PropTypes.number.isRequired,
+    pitch: PropTypes.number.isRequired,
+    bearing: PropTypes.number.isRequired
+  }).isRequired
+};
